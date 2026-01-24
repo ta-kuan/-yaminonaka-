@@ -1,1 +1,120 @@
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @font-face {
+        font-family: "kihon";
+        src: url("MPLUS2-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      body {
+        background-color: rgb(255,255,255);
+        font-family: yujiboku, sans-serif;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+      }
+      .all {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 100vw;
+        max-width: 100vh * (3 / 2);
+        aspect-ratio: 3 / 2;
+        background-color: rgb(200,255,255);
+      }
+      .back {
+        position: absolute;
+        background-color: rgb(176,143,188);
+        width: 100%;
+        height: 100%;
+      }
+      .back::after {
+        content: "闇の中";
+        font-family: "kihon";
+        font-weight: bold;
+        font-family: kihon;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-140%);
+        font-size: 10vw;
+      }
+      .startB {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,50%);
+        width: 35vw;
+        height: 12vw;
+        border: solid rgb(0,0,0);
+        background-color: rgb(255,255,180);
+      }
+      .startB::after {
+        content: "スタート";
+        font-size: 8vw;
+        white-space: nowrap;
+        font-family: "kihon";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
+      .off {
+        display: none;
+      }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>麻雀点数管理＆計算ツール</title>
+    <link rel="icon" href="majankankei.png">
+  </head>
+  <body>
+    <div class="all">
+      <div class="start">
+        <div class="back"></div>
+        <button class="startB"></button>
+      </div>
+      <div class="sinin"></div>
+      <div class="sentaku"><div>
+      <div class="lefttop">
+        <div class="p1">
+          <div class="p11"></div>
+          <div class="p12"></div>
+          <div class="p13"></div>
+        </div>
+        <div class="p2">
+          <div class="p21"></div>
+          <div class="p22"></div>
+          <div class="p23"></div>
+        </div>
+        <div class="p3">
+          <div class="p31"></div>
+          <div class="p32"></div>
+          <div class="p33"></div>
+        </div>
+        <div class="p4">
+          <div class="p41"></div>
+          <div class="p42"></div>
+          <div class="p43"></div>
+        </div>
+      </div>
+      <div class="rightbottom">
+      </div>
+    </div>
+    <script>
+      const start = document.querySelector(".start");
+      const startB = document.querySelector(".startB");
+      const sinin = document.querySelector(".sinin");
+      
+      startB.addEventListener("click", function (e) {
+        start.classList.add("off");
+      });
+    </script>
+  </body>
+</html>
