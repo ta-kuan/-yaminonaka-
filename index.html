@@ -666,7 +666,7 @@
         }
       });
       yougi2b.addEventListener("click", function() {
-        if (yougi1r.classList.contains("off")) {
+        if (yougi2r.classList.contains("off")) {
           yougi1.classList.remove("off");
           yougi1r.classList.add("off");
           yougi2.classList.add("off");
@@ -675,14 +675,14 @@
           sentaku.classList.add("mannaka");
           yougi3.classList.remove("off");
           yougi3r.classList.add("off"); 
-        } else if (!(yougi1r.classList.contains("off"))) {
+        } else if (!(yougi2r.classList.contains("off"))) {
           kettei.classList.remove(...ketteiclasses);
           ketteiK.classList.remove("off");
           kettei.classList.add("B");
         }
       });
       yougi3b.addEventListener("click", function() {
-        if (yougi1r.classList.contains("off")) {
+        if (yougi3r.classList.contains("off")) {
           yougi1.classList.remove("off");
           yougi1r.classList.add("off");
           yougi2.classList.remove("off");
@@ -691,7 +691,7 @@
           yougi3r.classList.remove("off");
           sentaku.classList.remove(...sentakuclasses);
           sentaku.classList.add("migi");
-        } else if (!(yougi1r.classList.contains("off"))) {
+        } else if (!(yougi3r.classList.contains("off"))) {
           kettei.classList.remove(...ketteiclasses);
           ketteiK.classList.remove("off");
           kettei.classList.add("C");
