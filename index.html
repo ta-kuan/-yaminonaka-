@@ -206,6 +206,14 @@
         width: 7%;
         top: 75vh;
       }
+      .ketteiK {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
       .kettei {
         position: ablosute;
       }
@@ -346,9 +354,11 @@
         <div class="block" id="yougi3b"></div>
         <img class="sentaku" src="sentaku.png"></img>
       </div>
+      <div class="ketteiK"></div>
       <div class="kettei">
         <button class="kyanseru"></button>
         <button class="kakutei"></button>
+      </div>
       <div class="player"></div>
     </div>
     <script>
@@ -390,6 +400,7 @@
       const p43 = document.querySelector(".p43");
       const p43y = document.querySelector(".p43y");
       const kettei = document.querySelector(".kettei");
+      const ketteiK = document.querySelector(".ketteiK");
       
       lefttop.classList.add("off");
       player.classList.add("off");
@@ -455,6 +466,15 @@
       });
       yougi1r.addEventListener("click", function() {
         kettei.classList.remove("off");
+        ketteiK.classList.remove("off");
+      });
+      yougi2r.addEventListener("click", function() {
+        kettei.classList.remove("off");
+        ketteiK.classList.remove("off");
+      });
+      yougi3r.addEventListener("click", function() {
+        kettei.classList.remove("off");
+        ketteiK.classList.remove("off");
       });
     </script>
   </body>
