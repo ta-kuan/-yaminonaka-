@@ -236,6 +236,7 @@
         background-color: rgb(230,230,230);
         color: rgb(0,0,0);
         border-radius: 5vh;
+        border: none;
       }
       .kyanseru::after {
         content: "キャンセル";
@@ -257,6 +258,7 @@
         background-color: rgb(180,255,180);
         color: rgb(0,0,0);
         border-radius: 5vh;
+        border: none;
       }
       .kakutei::after {
         content: "OK";
@@ -458,6 +460,7 @@
       const p43y = document.querySelector(".p43y");
       const kettei = document.querySelector(".kettei");
       const ketteiK = document.querySelector(".ketteiK");
+      const kyanseru = document.querySelector(".kyanseru");
       
       lefttop.classList.add("off");
       player.classList.add("off");
@@ -533,6 +536,14 @@
       yougi3r.addEventListener("click", function() {
         kettei.classList.remove("off");
         ketteiK.classList.remove("off");
+      });
+      ketteiK.addEventListener("click", function() {
+        kettei.classList.add("off");
+        ketteiK.classList.add("off");
+      });
+      kyanseru.addEventListener("click", function() {
+        kettei.classList.add("off");
+        ketteiK.classList.add("off");
       });
     </script>
   </body>
