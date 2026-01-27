@@ -263,21 +263,21 @@
         left: 58.5vh;
         top: 21vh;
         font-size: 5vh;
-        ont-weight: bold;
+        font-weight: bold;
       }
       .yougi2B {
         position: absolute;
         left: 81vh;
         top: 21vh;
         font-size: 5vh;
-        ont-weight: bold;
+        font-weight: bold;
       }
       .yougi3C {
         position: absolute;
         left: 103.2vh;
         top: 21vh;
         font-size: 5vh;
-        ont-weight: bold;
+        font-weight: bold;
       }
       .bottom {
         position: absolute;
@@ -605,6 +605,9 @@
       const yougi3 = document.querySelector(".yougi3");
       const yougi3r = document.querySelector(".yougi3r");
       const yougi3b = document.getElementById("yougi3b");
+      const yougi1A = document.getElementById("yougi1A");
+      const yougi2B = document.getElementById("yougi2B");
+      const yougi3C = document.getElementById("yougi3C");
       const sentaku = document.querySelector(".sentaku");
       const sentakuclasses = ["migi","mannaka","hidari","off"];
       const bottom = document.querySelector(".bottom");
@@ -648,6 +651,9 @@
       yougi2b.classList.add("off");
       yougi3.classList.add("off");
       yougi3r.classList.add("off");
+      yougi1A.classList.add("off");
+      yougi2B.classList.add("off");
+      yougi3C.classList.add("off");
       yougi3b.classList.add("off");
       sentaku.classList.add("off");
       bottom.classList.add("off");
@@ -676,6 +682,9 @@
         yougi2b.classList.remove("off");
         yougi3.classList.remove("off");
         yougi3b.classList.remove("off");
+        yougi1A.classList.remove("off");
+        yougi2B.classList.remove("off");
+        yougi3C.classList.remove("off");
         bottom.classList.remove("off");
         player.classList.remove("off");
         player.classList.add("p1m");
