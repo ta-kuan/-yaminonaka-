@@ -206,6 +206,15 @@
         width: 7%;
         top: 75vh;
       }
+      .kettei {
+        position: ablosute;
+      }
+      .kyanseru {
+        position: ablosute;
+      }
+      .kakutei {
+        position: ablosute;
+      }
       .migi {
         display: block;
         left: 100vh;
@@ -380,6 +389,7 @@
       const p42y = document.querySelector(".p42y");
       const p43 = document.querySelector(".p43");
       const p43y = document.querySelector(".p43y");
+      const kettei = document.querySelector(".kettei");
       
       lefttop.classList.add("off");
       player.classList.add("off");
@@ -402,6 +412,7 @@
       p41y.classList.add("off");
       p42y.classList.add("off");
       p43y.classList.add("off");
+      kettei.classList.add("off");
       
       startB.addEventListener("click", function() {
         start.classList.add("off");
@@ -441,6 +452,9 @@
         yougi3r.classList.remove("off");
         sentaku.classList.remove(...sentakuclasses);
         sentaku.classList.add("migi");
+      });
+      yougi1r.addEventListener("click", function() {
+        kettei.classList.remove("off");
       });
     </script>
   </body>
