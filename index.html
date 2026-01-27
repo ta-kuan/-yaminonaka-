@@ -291,6 +291,7 @@
       const yougi3 = document.querySelector(".yougi3");
       const yougi3r = document.querySelector(".yougi3r");
       const sentaku = document.querySelector(".sentaku");
+      const sentakuclasses = ["migi","mannaka","hidari"]
       
       lefttop.classList.add("off");
       player.classList.add("off");
@@ -300,6 +301,7 @@
       yougi2r.classList.add("off");
       yougi3.classList.add("off");
       yougi3r.classList.add("off");
+      sentaku.classList.add("off");
       
       startB.addEventListener("click", function() {
         start.classList.add("off");
@@ -313,6 +315,8 @@
       yougi1.addEventListener("click", function() {
         yougi1.classList.add("off");
         yougi1r.classList.remove("off");
+        sentaku.classList.remove(...sentakuclasses);
+        sentaku.classList.add("migi");
         yougi2.classList.remove("off");
         yougi2r.classList.add("off");
         yougi3.classList.remove("off");
@@ -323,6 +327,8 @@
         yougi1r.classList.add("off");
         yougi2.classList.add("off");
         yougi2r.classList.remove("off");
+        sentaku.classList.remove(...sentakuclasses);
+        sentaku.classList.add("mannaka");
         yougi3.classList.remove("off");
         yougi3r.classList.add("off"); 
       });
@@ -333,6 +339,8 @@
         yougi2r.classList.add("off");
         yougi3.classList.add("off");
         yougi3r.classList.remove("off");
+        sentaku.classList.remove(...sentakuclasses);
+        sentaku.classList.add("hidari");
       });
     </script>
   </body>
