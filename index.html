@@ -649,6 +649,53 @@
         ketteiK.classList.remove("off");
         kettei.classList.add("C");
       });
+      yougi1b.addEventListener("click", function() {
+        if (yougi1r.classList.contains("off")) {
+          yougi1.classList.add("off");
+          yougi1r.classList.remove("off");
+          sentaku.classList.remove(...sentakuclasses);
+          sentaku.classList.add("hidari");
+          yougi2.classList.remove("off");
+          yougi2r.classList.add("off");
+          yougi3.classList.remove("off");
+          yougi3r.classList.add("off");
+        } else if (!(yougi1r.classList.contains("off"))) {
+          kettei.classList.remove(...ketteiclasses);
+          ketteiK.classList.remove("off");
+          kettei.classList.add("A");
+        }
+      });
+      yougi2b.addEventListener("click", function() {
+        if (yougi1r.classList.contains("off")) {
+          yougi1.classList.remove("off");
+          yougi1r.classList.add("off");
+          yougi2.classList.add("off");
+          yougi2r.classList.remove("off");
+          sentaku.classList.remove(...sentakuclasses);
+          sentaku.classList.add("mannaka");
+          yougi3.classList.remove("off");
+          yougi3r.classList.add("off"); 
+        } else if (!(yougi1r.classList.contains("off"))) {
+          kettei.classList.remove(...ketteiclasses);
+          ketteiK.classList.remove("off");
+          kettei.classList.add("B");
+        }
+      });
+      yougi3b.addEventListener("click", function() {
+        if (yougi1r.classList.contains("off")) {
+          yougi1.classList.remove("off");
+          yougi1r.classList.add("off");
+          yougi2.classList.remove("off");
+          yougi2r.classList.add("off");
+          yougi3.classList.add("off");
+          yougi3r.classList.remove("off");
+          sentaku.classList.remove(...sentakuclasses);
+          sentaku.classList.add("migi");
+        } else if (!(yougi1r.classList.contains("off"))) {
+          kettei.classList.remove(...ketteiclasses);
+          ketteiK.classList.remove("off");
+          kettei.classList.add("C");
+      });
       ketteiK.addEventListener("click", function() {
         kettei.classList.add("off");
         ketteiK.classList.add("off");
