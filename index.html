@@ -266,16 +266,40 @@
       const sinin = document.querySelector(".sinin");
       const lefttop = document.querySelector(".lefttop");
       const player = document.querySelector(".player");
+      const yougi1 = document.querySelector(".yougi1");
+      const yougi1r = document.querySelector(".yougi1r");
+      const yougi2 = document.querySelector(".yougi2");
+      const yougi2r = document.querySelector(".yougi2r");
+      const yougi3 = document.querySelector(".yougi3");
+      const yougi3r = document.querySelector(".yougi3r");
+      const sentaku = document.querySelector(".sentaku");
       
       lefttop.classList.add("off");
       player.classList.add("off");
-      
+      yougi1r.classList.add("off");
+      yougi2r.classList.add("off");
+      yougi3r.classList.add("off");
       
       startB.addEventListener("click", function() {
         start.classList.add("off");
         lefttop.classList.remove("off");
         player.classList.remove("off");
         player.classList.add("p1m");
+      });
+      yougi1.addEventListener("click", function() {
+        yougi1r.classList.remove("off");
+        yogui2r.classList.add("off");
+        yogui3r.classList.add("off"); 
+      });
+      yougi2.addEventListener("click", function() {
+        yougi2r.classList.remove("off");
+        yogui1r.classList.add("off");
+        yogui3r.classList.add("off"); 
+      });
+      yougi3.addEventListener("click", function() {
+        yougi3r.classList.remove("off");
+        yogui1r.classList.add("off");
+        yogui2r.classList.add("off"); 
       });
     </script>
   </body>
