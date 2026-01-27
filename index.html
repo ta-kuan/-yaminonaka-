@@ -459,6 +459,7 @@
       const p43 = document.querySelector(".p43");
       const p43y = document.querySelector(".p43y");
       const kettei = document.querySelector(".kettei");
+      const ketteiclasses = ["A","B","C","off"];
       const ketteiK = document.querySelector(".ketteiK");
       const kyanseru = document.querySelector(".kyanseru");
       
@@ -526,16 +527,19 @@
         sentaku.classList.add("migi");
       });
       yougi1r.addEventListener("click", function() {
-        kettei.classList.remove("off");
+        kettei.classList.remove(...ketteiclasses);
         ketteiK.classList.remove("off");
+        kettei.classList.add("A");
       });
       yougi2r.addEventListener("click", function() {
-        kettei.classList.remove("off");
+        kettei.classList.remove(...ketteiclasses);
         ketteiK.classList.remove("off");
+        kettei.classList.add("B");
       });
       yougi3r.addEventListener("click", function() {
-        kettei.classList.remove("off");
+        kettei.classList.remove(...ketteiclasses);
         ketteiK.classList.remove("off");
+        kettei.classList.add("C");
       });
       ketteiK.addEventListener("click", function() {
         kettei.classList.add("off");
