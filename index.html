@@ -232,8 +232,8 @@
         position: absolute;
         width: 50vh;
         height: 18vh;
-        top: 50%;
-        transform: translateY(-40%);
+        left: 50%;
+        transform: translateX(-40%);
         border-right: solid 2vh;
         border-top: solid 2vh;
         border-left: solid 2vh;
@@ -531,6 +531,7 @@
       const yougi3b = document.getElementById("yougi3b");
       const sentaku = document.querySelector(".sentaku");
       const sentakuclasses = ["migi","mannaka","hidari","off"];
+      const bottom = document.queryselector(".bottom");
       const p11 = document.querySelector(".p11");
       const p11y = document.querySelector(".p11y");
       const p12 = document.querySelector(".p12");
@@ -573,6 +574,7 @@
       yougi3r.classList.add("off");
       yougi3b.classList.add("off");
       sentaku.classList.add("off");
+      bottom.classList.add("off");
       p11y.classList.add("off");
       p12y.classList.add("off");
       p13y.classList.add("off");
@@ -598,6 +600,7 @@
         yougi2b.classList.remove("off");
         yougi3.classList.remove("off");
         yougi3b.classList.remove("off");
+        bottom.classList.remove("off");
         player.classList.remove("off");
         player.classList.add("p1m");
       });
