@@ -778,7 +778,6 @@
       ketteiK.classList.add("off");
       change.classList.add("off");
       changem.classList.add("off");
-      changem.classList.add("p2turn");
       for (let i = number.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [number[i], number[j]] = [number[j], number[i]];
@@ -923,6 +922,7 @@
         yougi3b.classList.add("off");
         change.classList.remove("off");
         changem.classList.remove("off");
+        changem.classList.add("p2turn");
       });
     </script>
   </body>
