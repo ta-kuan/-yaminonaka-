@@ -779,8 +779,9 @@
       const backc = document.querySelector(".backc");
       const change = document.querySelector(".change");
       const changeb = document.querySelector(".changeb");
-      const backcclasses = ["p1turn","p2turn","p3turn","p4turn"];
+      const backcclasses = ["p1turn","p2turn","p3turn","p4turn","answer1","answer2","answer3","answer4"];
       let syu = 0;
+      let r = 1;
       const next = document.querySelector(".next");
       
       lefttop.classList.add("off");
@@ -963,6 +964,7 @@
         yougi3r.classList.add("off");
         change.classList.remove("off");
         backc.classList.remove(...backcclasses);
+        syu += 1;
         if (player.classList.contains("p1m")) {
           player.classList.remove(...playerclasses);
           player.classList.add("p2m");
@@ -1073,7 +1075,24 @@
           p2b.classList.add(number[5]);
           p3b.classList.add(number[6]);
           p4b.classList.add(number[7]);
-          next.classList.remove("off");
+          changeb.classList.add("answerb");
+          if (r === 1) {
+            backc.classList.remove(...backcclasses);
+            backc.classList.add("answer1");
+            r += 1;
+          } else if (r === 2) {
+            backc.classList.remove(...backcclasses);
+            backc.classList.add("answer2");
+            r += 1;
+          } else if (r === 3) {
+            backc.classList.remove(...backcclasses);
+            backc.classList.add("answer3");
+            r += 1;
+          } else if (r === 4) {
+            backc.classList.remove(...backcclasses);
+            backc.classList.add("answer4");
+            r += 1;
+          }
         }
       });
       changeb.addEventListener("click", function() {
@@ -1084,6 +1103,9 @@
         yougi1.classList.remove("off");
         yougi2.classList.remove("off");
         yougi3.classList.remove("off");
+        if (syu === 4) {
+          next.classList.remove("off");
+        }
       });
       next.addEventListener("click", function() {
         next.classList.remove("off");
