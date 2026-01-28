@@ -426,6 +426,59 @@
         white-space: nowrap;
         color: rgb(0,0,0);
       }
+      .backc {
+        position: absolute;
+        background-color: rgb(115,85,120);
+        width: 100%;
+        height: 100%;
+      }
+      .backc::after {
+        content: "";
+        font-family: "kihon";
+        font-weight: bold;
+        font-family: kihon;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-140%);
+        font-size: 10vw;
+        color: rgb(255,255,255);
+        white-space: nowrap;
+      }
+      .changeb {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,50%);
+        width: 35vw;
+        height: 12vw;
+        border: solid rgb(0,0,0);
+        background-color: rgb(255,255,180);
+      }
+      .changeb::after {
+        content: "スタート";
+        font-size: 8vw;
+        white-space: nowrap;
+        font-family: "kihon";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        white-space: nowrap;
+        color: rgb(0,0,0);
+      }
+      .p1turn::after {
+        content: "P1　の番です";
+      }
+      .p2turn::after {
+        content: "P2　の番です";
+      }
+      .p3turn::after {
+        content: "P3　の番です";
+      }
+      .p4turn::after {
+        content: "P4　の番です";
+      }
       .migi {
         display: block;
         left: 100vh;
@@ -546,8 +599,8 @@
   </head>
   <body>
     <div class="all">
+      <div class="back"></div>
       <div class="start">
-        <div class="back"></div>
         <button class="startB"></button>
       </div>
       <div class="sininall">
@@ -623,9 +676,15 @@
         <button class="kakutei"></button>
       </div>
       <div class="player"></div>
+      <div class="change">
+        <div class="backc"></div>
+        <div class="changem"></div>
+        <div class="changeb"></div>
+      </div>
     </div>
     <script>
       const start = document.querySelector(".start");
+      const back = document.quertSelector(".back"); 
       const startB = document.querySelector(".startB");
       let number = ["ni","san","yon","go","roku","nana","hati","batu"];
       const sinin = document.querySelector(".sinin");
@@ -680,6 +739,10 @@
       const ketteiclasses = ["A","B","C","off"];
       const ketteiK = document.querySelector(".ketteiK");
       const kyanseru = document.querySelector(".kyanseru");
+      const backc = document.querySelector(".backc");
+      const change = document.querySelector(".change");
+      const changem = document.querySelector(".changem");
+      const changeclasses = ["p1turn","p2turn","p3turn","p4turn"];
       
       lefttop.classList.add("off");
       sininall.classList.add("off");
@@ -712,6 +775,9 @@
       p43y.classList.add("off");
       kettei.classList.add("off");
       ketteiK.classList.add("off");
+      change.classList.add("off");
+      changem.classList.add("off");
+      changem.classList.add("p2turn");
       for (let i = number.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [number[i], number[j]] = [number[j], number[i]];
@@ -731,6 +797,7 @@
       
       startB.addEventListener("click", function() {
         start.classList.add("off");
+        back.classList.add("off");
         lefttop.classList.remove("off");
         sininall.classList.remove("off");
         yougi1.classList.remove("off");
@@ -842,6 +909,8 @@
       ketteiK.addEventListener("click", function() {
         kettei.classList.add("off");
         ketteiK.classList.add("off");
+        change.classList.remove("off");
+        changem.classList.remove;("off");
       });
       kyanseru.addEventListener("click", function() {
         kettei.classList.add("off");
