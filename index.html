@@ -962,9 +962,9 @@
         yougi2r.classList.add("off");
         yougi3r.classList.add("off");
         change.classList.remove("off");
-        player.classList.remove(...playerclasses);
         backc.classList.remove(...backcclasses);
         if (player.classList.contains("p1m")) {
+          player.classList.remove(...playerclasses);
           player.classList.add("p2m");
           if (kettei.classList.contains("A")) {
             p11.classList.add("off");
@@ -989,6 +989,7 @@
           p3b.classList.add(number[6]);
           backc.classList.add("p2turn");
         } else if (player.classList.contains("p2m")) {
+          player.classList.remove(...playerclasses);
           player.classList.add("p3m");
           if (kettei.classList.contains("A")) {
             p21.classList.add("off");
@@ -1013,6 +1014,7 @@
           p4b.classList.add(number[7]);
           backc.classList.add("p3turn");
         } else if (player.classList.contains("p3m")) {
+          player.classList.remove(...playerclasses);
           player.classList.add("p4m");
           if (kettei.classList.contains("A")) {
             p31.classList.add("off");
@@ -1037,6 +1039,7 @@
           p1b.classList.add(number[4]);
           backc.classList.add("p4turn");
         } else if (player.classList.contains("p4m")) {
+          player.classList.remove(...playerclasses);
           player.classList.add("p1m");
           if (kettei.classList.contains("A")) {
             p41.classList.add("off");
