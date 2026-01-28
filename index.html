@@ -1112,10 +1112,26 @@
         yougi3.classList.remove("off");
         if (syu === 4) {
           next.classList.remove("off");
+          yougi1b.classList.add("bontclick");
+          yougi2b.classList.add("bontclick");
+          yougi3b.classList.add("bontclick");
+          yougi1.classList.add("bontclick");
+          yougi2.classList.add("bontclick");
+          yougi3.classList.add("bontclick");
         }
       });
       next.addEventListener("click", function() {
-        next.classList.remove("off");
+        next.classList.add("off");
+        yougi1b.classList.remove("bontclick");
+        yougi2b.classList.remove("bontclick");
+        yougi3b.classList.remove("bontclick");
+        yougi1.classList.remove("bontclick");
+        yougi2.classList.remove("bontclick");
+        yougi3.classList.remove("bontclick");
+        for (let i = number.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [number[i], number[j]] = [number[j], number[i]];
+        }
       });
     </script>
   </body>
