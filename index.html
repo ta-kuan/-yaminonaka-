@@ -763,7 +763,7 @@
       const backc = document.querySelector(".backc");
       const change = document.querySelector(".change");
       const changeb = document.querySelector(".changeb");
-      const changeclasses = ["p1turn","p2turn","p3turn","p4turn"];
+      const backcclasses = ["p1turn","p2turn","p3turn","p4turn"];
       let syu = 0;
       const next = document.querySelector(".next");
       
@@ -946,74 +946,70 @@
         yougi2r.classList.add("off");
         yougi3r.classList.add("off");
         change.classList.remove("off");
-        syu += 1;
-        if (!(syu === 4)) {
-          if (player.classList.contains("p1m")) {
-            player.classList.remove(...playerclasses);
-            player.classList.add("p2m");
-            if (kettei.classList.contains("A")) {
-              p11.classList.add("off");
-              p11y.classList.remove("off");
-            } else if (kettei.classList.contains("B")) {
-              p12.classList.add("off");
-              p12y.classList.remove("off");
-            } else if (kettei.classList.contains("C")) {
-              p13.classList.add("off");
-              p13y.classList.remove("off");
-            }
-            p1b.classList.remove(number[4]);
-            p3b.classList.add(number[6]);
-            backc.classList.add("p2turn");
-          } else if (player.classList.contains("p2m")) {
-            player.classList.remove(...playerclasses);
-            player.classList.add("p3m");
-            if (kettei.classList.contains("A")) {
-              p21.classList.add("off");
-              p21y.classList.remove("off");
-            } else if (kettei.classList.contains("B")) {
-              p22.classList.add("off");
-              p22y.classList.remove("off");
-            } else if (kettei.classList.contains("C")) {
-              p23.classList.add("off");
-              p23y.classList.remove("off");
-            }
-            p2b.classList.remove(number[5]);
-            p4b.classList.add(number[7]);
-            backc.classList.add("p3turn");
-          } else if (player.classList.contains("p3m")) {
-            player.classList.remove(...playerclasses);
-            player.classList.add("p4m");
-            if (kettei.classList.contains("A")) {
-              p31.classList.add("off");
-              p31y.classList.remove("off");
-            } else if (kettei.classList.contains("B")) {
-              p32.classList.add("off");
-              p32y.classList.remove("off");
-            } else if (kettei.classList.contains("C")) {
-              p33.classList.add("off");
-              p33y.classList.remove("off");
-            }
-            p3b.classList.remove(number[6]);
-            p1b.classList.add(number[4]);
-            backc.classList.add("p4turn");
-          } else if (player.classList.contains("p4m")) {
-            player.classList.remove(...playerclasses);
-            player.classList.add("p1m");
-            if (kettei.classList.contains("A")) {
-              p41.classList.add("off");
-              p41y.classList.remove("off");
-            } else if (kettei.classList.contains("B")) {
-              p42.classList.add("off");
-              p42y.classList.remove("off");
-            } else if (kettei.classList.contains("C")) {
-              p43.classList.add("off");
-              p43y.classList.remove("off");
-            }
-            p4b.classList.remove(number[7]);
-            p2b.classList.add(number[5]);
-            backc.classList.add("p2turn");
+        player.classList.remove(...playerclasses);
+        backc.classList.remove(...backcclasses);
+        if (player.classList.contains("p1m")) {
+          player.classList.add("p2m");
+          if (kettei.classList.contains("A")) {
+            p11.classList.add("off");
+            p11y.classList.remove("off");
+          } else if (kettei.classList.contains("B")) {
+            p12.classList.add("off");
+            p12y.classList.remove("off");
+          } else if (kettei.classList.contains("C")) {
+            p13.classList.add("off");
+            p13y.classList.remove("off");
           }
-        } else if (syu = 4) {
+          p1b.classList.remove(number[4]);
+          p3b.classList.add(number[6]);
+          backc.classList.add("p2turn");
+        } else if (player.classList.contains("p2m")) {
+          player.classList.add("p3m");
+          if (kettei.classList.contains("A")) {
+            p21.classList.add("off");
+            p21y.classList.remove("off");
+          } else if (kettei.classList.contains("B")) {
+            p22.classList.add("off");
+            p22y.classList.remove("off");
+          } else if (kettei.classList.contains("C")) {
+            p23.classList.add("off");
+            p23y.classList.remove("off");
+          }
+          p2b.classList.remove(number[5]);
+          p4b.classList.add(number[7]);
+          backc.classList.add("p3turn");
+        } else if (player.classList.contains("p3m")) {
+          player.classList.add("p4m");
+          if (kettei.classList.contains("A")) {
+            p31.classList.add("off");
+            p31y.classList.remove("off");
+          } else if (kettei.classList.contains("B")) {
+            p32.classList.add("off");
+            p32y.classList.remove("off");
+          } else if (kettei.classList.contains("C")) {
+            p33.classList.add("off");
+            p33y.classList.remove("off");
+          }
+          p3b.classList.remove(number[6]);
+          p1b.classList.add(number[4]);
+          backc.classList.add("p4turn");
+        } else if (player.classList.contains("p4m")) {
+          player.classList.add("p1m");
+          if (kettei.classList.contains("A")) {
+            p41.classList.add("off");
+            p41y.classList.remove("off");
+          } else if (kettei.classList.contains("B")) {
+            p42.classList.add("off");
+            p42y.classList.remove("off");
+          } else if (kettei.classList.contains("C")) {
+            p43.classList.add("off");
+            p43y.classList.remove("off");
+          }
+          p4b.classList.remove(number[7]);
+          p2b.classList.add(number[5]);
+          backc.classList.add("p2turn");
+        }
+        if (syu = 4) {
           sininb.classList.add(number[0]);
           yougi1b.classList.add(number[1]);
           yougi2b.classList.add(number[2]);
