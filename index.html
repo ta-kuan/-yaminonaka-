@@ -428,6 +428,27 @@
         display: block;
         left: 55vh;
       }
+      .A::after {
+        content: "A を選びますか？";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%;-40%);
+      }
+      .B::after {
+        content: "B を選びますか？";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%;-40%);
+      }
+      .C::after {
+        content: "C を選びますか？";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%;-40%);
+      }
       .p1m::after {
         content: "P1";
         color: rgb(0,0,0);
@@ -697,14 +718,18 @@
         const j = Math.floor(Math.random() * (i + 1));
         [number[i], number[j]] = [number[j], number[i]];
       }
-      sininb.classList.add(number[0]);
       yougi1b.classList.add(number[1]);
       yougi2b.classList.add(number[2]);
-      yougi3b.classList.add(number[3]);
       p1b.classList.add(number[4]);
       p2b.classList.add(number[5]);
-      p3b.classList.add(number[6]);
-      p4b.classList.add(number[7]);
+      //sininb.classList.add(number[0]);
+      //yougi1b.classList.add(number[1]);
+      //yougi2b.classList.add(number[2]);
+      //yougi3b.classList.add(number[3]);
+      //p1b.classList.add(number[4]);
+      //p2b.classList.add(number[5]);
+      //p3b.classList.add(number[6]);
+      //p4b.classList.add(number[7]);
       
       startB.addEventListener("click", function() {
         start.classList.add("off");
