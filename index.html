@@ -925,7 +925,7 @@
         change.classList.remove("off");
         if (player.classList.contains("p1m")) {
           player.classList.remove(...playerclasses);
-          player.classList.add("pm2");
+          player.classList.add("p2m");
           if (kettei.classList.contains("A")) {
             p11.classList.add("off");
             p11y.classList.remove("off");
@@ -941,7 +941,7 @@
           backc.classList.add("p2turn");
         } else if (player.classList.contains("p2m")) {
           player.classList.remove(...playerclasses);
-          player.classList.add("pm3");
+          player.classList.add("p3m");
           if (kettei.classList.contains("A")) {
             p21.classList.add("off");
             p21y.classList.remove("off");
@@ -957,7 +957,7 @@
           backc.classList.add("p3turn");
         } else if (player.classList.contains("p3m")) {
           player.classList.remove(...playerclasses);
-          player.classList.add("pm4");
+          player.classList.add("p4m");
           if (kettei.classList.contains("A")) {
             p31.classList.add("off");
             p31y.classList.remove("off");
@@ -973,7 +973,7 @@
           backc.classList.add("p4turn");
         } else if (player.classList.contains("p4m")) {
           player.classList.remove(...playerclasses);
-          player.classList.add("pm1");
+          player.classList.add("p1m");
           if (kettei.classList.contains("A")) {
             p41.classList.add("off");
             p41y.classList.remove("off");
@@ -993,6 +993,9 @@
           yougi1b.classList.remove("off");
           yougi2b.classList.remove("off");
           yougi3b.classList.remove("off");
+          yougi1.classList.remove("off");
+          yougi2.classList.remove("off");
+          yougi3.classList.remove("off");
         });
       });
     </script>
