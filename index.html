@@ -470,8 +470,8 @@
       }
       .next: {
         position: absolute;
-        width: 10vh;
-        height: 5vh;
+        width: 20vh;
+        height: 10vh;
         right: 3vh;
         bottom: 3vh;
         background-color: rgb(255,180,180);
@@ -479,13 +479,13 @@
         border-radius: 3vh;
       }
       .next::after {
-        content: "次へ"
+        content: "次へ";
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
         font-family: kihon;
-        font-size: 2vh;
+        font-size: 5vh;
       }
       .p1turn::after {
         content: "P1 の番です";
@@ -966,6 +966,7 @@
         yougi1r.classList.add("off");
         yougi2r.classList.add("off");
         yougi3r.classList.add("off");
+        sentaku.classList.add("off");
         change.classList.remove("off");
         backc.classList.remove(...backcclasses);
         syu += 1;
