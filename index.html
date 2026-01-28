@@ -468,16 +468,16 @@
         color: rgb(0,0,0);
       }
       .p1turn::after {
-        content: "P1　の番です";
+        content: "P1 の番です";
       }
       .p2turn::after {
-        content: "P2　の番です";
+        content: "P2 の番です";
       }
       .p3turn::after {
-        content: "P3　の番です";
+        content: "P3 の番です";
       }
       .p4turn::after {
-        content: "P4　の番です";
+        content: "P4 の番です";
       }
       .migi {
         display: block;
@@ -492,13 +492,13 @@
         left: 55vh;
       }
       .A::after {
-        content: "A　を選びますか？";
+        content: "A を選びますか？";
       }
       .B::after {
-        content: "B　を選びますか？";
+        content: "B を選びますか？";
       }
       .C::after {
-        content: "C　を選びますか？";
+        content: "C を選びますか？";
       }
       .p1m::after {
         content: "P1";
@@ -909,12 +909,14 @@
       ketteiK.addEventListener("click", function() {
         kettei.classList.add("off");
         ketteiK.classList.add("off");
-        change.classList.remove("off");
-        changem.classList.remove;("off");
       });
       kyanseru.addEventListener("click", function() {
         kettei.classList.add("off");
         ketteiK.classList.add("off");
+      });
+      kakutei.addEventListener("click", function() {
+        change.classList.remove("off");
+        changem.classList.remove;("off");
       });
     </script>
   </body>
