@@ -1112,22 +1112,22 @@
         yougi3.classList.remove("off");
         if (syu === 4) {
           next.classList.remove("off");
-          yougi1b.classList.add("bontclick");
-          yougi2b.classList.add("bontclick");
-          yougi3b.classList.add("bontclick");
-          yougi1.classList.add("bontclick");
-          yougi2.classList.add("bontclick");
-          yougi3.classList.add("bontclick");
+          yougi1b.classList.add("dontclick");
+          yougi2b.classList.add("dontclick");
+          yougi3b.classList.add("dontclick");
+          yougi1.classList.add("dontclick");
+          yougi2.classList.add("dontclick");
+          yougi3.classList.add("dontclick");
         }
       });
       next.addEventListener("click", function() {
         next.classList.add("off");
-        yougi1b.classList.remove("bontclick");
-        yougi2b.classList.remove("bontclick");
-        yougi3b.classList.remove("bontclick");
-        yougi1.classList.remove("bontclick");
-        yougi2.classList.remove("bontclick");
-        yougi3.classList.remove("bontclick");
+        yougi1b.classList.remove("dontclick");
+        yougi2b.classList.remove("dontclick");
+        yougi3b.classList.remove("dontclick");
+        yougi1.classList.remove("dontclick");
+        yougi2.classList.remove("dontclick");
+        yougi3.classList.remove("dontclick");
         for (let i = number.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [number[i], number[j]] = [number[j], number[i]];
