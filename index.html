@@ -678,7 +678,6 @@
       <div class="player"></div>
       <div class="change">
         <div class="backc"></div>
-        <div class="changem"></div>
         <div class="changeb"></div>
       </div>
     </div>
@@ -742,7 +741,6 @@
       const kakutei = document.querySelector(".kakutei");
       const backc = document.querySelector(".backc");
       const change = document.querySelector(".change");
-      const changem = document.querySelector(".changem");
       const changeclasses = ["p1turn","p2turn","p3turn","p4turn"];
       
       lefttop.classList.add("off");
@@ -777,7 +775,6 @@
       kettei.classList.add("off");
       ketteiK.classList.add("off");
       change.classList.add("off");
-      changem.classList.add("off");
       for (let i = number.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [number[i], number[j]] = [number[j], number[i]];
@@ -921,8 +918,7 @@
         yougi2b.classList.add("off");
         yougi3b.classList.add("off");
         change.classList.remove("off");
-        changem.classList.remove("off");
-        changem.classList.add("p2turn");
+        backc.classList.add("p2turn");
       });
     </script>
   </body>
