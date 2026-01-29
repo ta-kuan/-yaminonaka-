@@ -1130,7 +1130,7 @@
       //p3b.classList.add(number[6]);
       //p4b.classList.add(number[7]);
 
-      function hannin() {
+      function hanninf() {
         if (el.classList.contains("batu")) return null;
         for (const c in classToNumber) {
           if (el.classList.contains(c)) {
@@ -1140,9 +1140,9 @@
         return null;
       }
       function keisan() {
-        y1 = hannin(yougi1b);
-        y2 = hannin(yougi2b);
-        y3 = hannin(yougi3b);
+        y1 = hanninf(yougi1b);
+        y2 = hanninf(yougi2b);
+        y3 = hanninf(yougi3b);
         if (y1 === 5 || y2 === 5 || y3 === 5) {
           sort = [y1, y2, y3].sort((a, b) => a - b);
           if (sort[0] === y1) {
