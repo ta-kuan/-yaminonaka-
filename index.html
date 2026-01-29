@@ -1063,6 +1063,7 @@
       let p2Choice = null;
       let p3Choice = null;
       let p4Choice = null;
+      let hanninIndex = null;
       const tclasses = ["t0","t-1","t-2","t-3","t-4","t-5","t-6","t-7","t-8"];
       let totalScores = [0, 0, 0, 0];
       const classToNumber = {
@@ -1162,7 +1163,7 @@
       }
       function finishRound() {
         let yougiBlocks = [yougi1b, yougi2b, yougi3b];
-        let hanninIndex = getHanninIndex(yougiBlocks);
+        hanninIndex = getHanninIndex(yougiBlocks);
         let playerChoices1 = [p1Choice, p2Choice, p3Choice, p4Choice];
         let playerChoices2 = [p2Choice, p3Choice, p4Choice, p1Choice];
         let playerChoices3 = [p3Choice, p4Choice, p1Choice, p2Choice];
