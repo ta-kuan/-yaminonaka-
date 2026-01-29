@@ -1039,6 +1039,7 @@
       const next = document.querySelector(".next");
       const backt = document.querySelector(".backt");
       const tokutenhyou = document.querySelector(".tokutenhyou");
+      let n = 0;
       
       lefttop.classList.add("off");
       sininall.classList.add("off");
@@ -1373,44 +1374,52 @@
         }
       });
       next.addEventListener("click", function() {
-        yougi1b.classList.remove("dontclick");
-        yougi2b.classList.remove("dontclick");
-        yougi3b.classList.remove("dontclick");
-        yougi1.classList.remove("dontclick");
-        yougi2.classList.remove("dontclick");
-        yougi3.classList.remove("dontclick");
-        yougi1b.classList.add("off");
-        yougi2b.classList.add("off");
-        yougi3b.classList.add("off");
-        p11.classList.remove("off");
-        p12.classList.remove("off");
-        p13.classList.remove("off");
-        p21.classList.remove("off");
-        p22.classList.remove("off");
-        p23.classList.remove("off");
-        p31.classList.remove("off");
-        p32.classList.remove("off");
-        p33.classList.remove("off");
-        p41.classList.remove("off");
-        p42.classList.remove("off");
-        p43.classList.remove("off");
-        p11y.classList.add("off");
-        p12y.classList.add("off");
-        p13y.classList.add("off");
-        p21y.classList.add("off");
-        p22y.classList.add("off");
-        p23y.classList.add("off");
-        p31y.classList.add("off");
-        p32y.classList.add("off");
-        p33y.classList.add("off");
-        p41y.classList.add("off");
-        p42y.classList.add("off");
-        p43y.classList.add("off");
-        backt.classList.remove("off");
-        tokutenhyou.classList.remove("off");
-        for (let i = number.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [number[i], number[j]] = [number[j], number[i]];
+        if (n === 0) {
+          yougi1b.classList.remove("dontclick");
+          yougi2b.classList.remove("dontclick");
+          yougi3b.classList.remove("dontclick");
+          yougi1.classList.remove("dontclick");
+          yougi2.classList.remove("dontclick");
+          yougi3.classList.remove("dontclick");
+          yougi1b.classList.add("off");
+          yougi2b.classList.add("off");
+          yougi3b.classList.add("off");
+          p11.classList.remove("off");
+          p12.classList.remove("off");
+          p13.classList.remove("off");
+          p21.classList.remove("off");
+          p22.classList.remove("off");
+          p23.classList.remove("off");
+          p31.classList.remove("off");
+          p32.classList.remove("off");
+          p33.classList.remove("off");
+          p41.classList.remove("off");
+          p42.classList.remove("off");
+          p43.classList.remove("off");
+          p11y.classList.add("off");
+          p12y.classList.add("off");
+          p13y.classList.add("off");
+          p21y.classList.add("off");
+          p22y.classList.add("off");
+          p23y.classList.add("off");
+          p31y.classList.add("off");
+          p32y.classList.add("off");
+          p33y.classList.add("off");
+          p41y.classList.add("off");
+          p42y.classList.add("off");
+          p43y.classList.add("off");
+          backt.classList.remove("off");
+          tokutenhyou.classList.remove("off");
+          for (let i = number.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [number[i], number[j]] = [number[j], number[i]];
+          }
+        } else if (n === 1) {
+          next.classList.add("off");
+          tokutenhyou.classList.add("off");
+          yougi1b.classList.remove("off");
+          yougi2b.classList.remove("off");
+          yougi3b.classList.remove("off");
         }
       });
     </script>
