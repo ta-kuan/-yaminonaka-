@@ -1145,7 +1145,7 @@
         y3 = hanninf(yougi3b);
         if (y1 === 5 || y2 === 5 || y3 === 5) {
           sort = [y1, y2, y3].sort((a, b) => a - b);
-          if (!(sort[0] === null))
+          if (!(sort[0] === null)) {
             if (sort[0] === y1) {
               hannin = 1;
             } else if (sort[0] === y2) {
@@ -1153,18 +1153,18 @@
             } else if (sort[0] === y3) {
               hannin = 3;
             }
-          } else 
+          } else {
             if (sort[1] === y1) {
-            hannin = 1;
-          } else if (sort[1] === y2) {
-            hannin = 2;
-          } else if (sort[1] === y3) {
-            hannin = 3;
+              hannin = 1;
+            } else if (sort[1] === y2) {
+              hannin = 2;
+            } else if (sort[1] === y3) {
+              hannin = 3;
+            }
           }
-        }
         } else {
           sort = [y1, y2, y3].sort((a, b) => b - a);
-          if (!(sort[0] === null))
+          if (!(sort[0] === null)) {
             if (sort[0] === y1) {
               hannin = 1;
             } else if (sort[0] === y2) {
@@ -1172,16 +1172,16 @@
             } else if (sort[0] === y3) {
               hannin = 3;
             }
-          } else 
+          } else {
             if (sort[1] === y1) {
-            hannin = 1;
-          } else if (sort[1] === y2) {
-            hannin = 2;
-          } else if (sort[1] === y3) {
-            hannin = 3;
+              hannin = 1;
+            } else if (sort[1] === y2) {
+              hannin = 2;
+            } else if (sort[1] === y3) {
+              hannin = 3;
+            }
           }
         }
-        
       }
       startB.addEventListener("click", function() {
         start.classList.add("off");
