@@ -1414,6 +1414,30 @@
             const j = Math.floor(Math.random() * (i + 1));
             [number[i], number[j]] = [number[j], number[i]];
           }
+          sininb.classList.remove(...number);
+          yougi1b.classList.remove(...number);
+          yougi2b.classList.remove(...number);
+          yougi3b.classList.remove(...number);
+          p1b.classList.remove(...number);
+          p2b.classList.remove(...number);
+          p3b.classList.remove(...number);
+          p4b.classList.remove(...number);
+          yougi1b.classList.add(number[1]);
+          yougi2b.classList.add(number[2]);
+          player.classList.remove(...playerclasses);
+          if (r === 2) {
+            p2b.classList.add(number[5]);
+            p3b.classList.add(number[6]);
+            player.classList.add("p2m");
+          } else if (r === 3) {
+            p3b.classList.add(number[6]);
+            p4b.classList.add(number[7]);
+            player.classList.add("p3m");
+          } else if (r === 4) {
+            p4b.classList.add(number[7]);
+            p1b.classList.add(number[4]);
+            player.classList.add("p4m");
+          }
           n = 1;
         } else if (n === 1) {
           next.classList.add("off");
