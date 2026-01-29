@@ -778,6 +778,7 @@
         <div class="backc"></div>
         <button class="changeb"></button>
       </div>
+      <div class="backt"></div>
       <div class="tokutenhyou">
         <div class="hyou" id="1"></div>
         <div class="hyou" id="2"></div>
@@ -811,7 +812,6 @@
         <div class="hyou" id="30"></div>
       </div>
       <button class="next"></button>
-      <div class="backt"></div>
     </div>
     <script>
       const start = document.querySelector(".start");
@@ -1215,13 +1215,15 @@
         }
       });
       next.addEventListener("click", function() {
-        next.classList.add("off");
         yougi1b.classList.remove("dontclick");
         yougi2b.classList.remove("dontclick");
         yougi3b.classList.remove("dontclick");
         yougi1.classList.remove("dontclick");
         yougi2.classList.remove("dontclick");
         yougi3.classList.remove("dontclick");
+        yougi1b.classList.add("off");
+        yougi2b.classList.add("off");
+        yougi3b.classList.add("off");
         p11.classList.remove("off");
         p12.classList.remove("off");
         p13.classList.remove("off");
