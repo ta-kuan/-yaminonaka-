@@ -39,7 +39,7 @@
         height: 100%;
       }
       .back::after {
-        content: "闇の中";
+        content: "藪の中";
         font-family: "kihon";
         font-weight: bold;
         font-family: kihon;
@@ -869,7 +869,7 @@
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>闇の中</title>
+    <title>藪の中</title>
     <link rel="icon" href="">
   </head>
   <body>
@@ -1060,6 +1060,17 @@
       const tokutenhyou = document.querySelector(".tokutenhyou");
       let n = 0;
       const tclasses = ["t0","t-1","t-2","t-3","t-4","t-5","t-6","t-7","t-8"];
+      let totalScores = [0, 0, 0, 0];
+      const classToNumber = {
+        ni: 2,
+        san: 3,
+        yon: 4,
+        go: 5,
+        roku: 6,
+        nana: 7,
+        hati: 8
+      };
+
       
       lefttop.classList.add("off");
       sininall.classList.add("off");
@@ -1112,7 +1123,62 @@
       //p2b.classList.add(number[5]);
       //p3b.classList.add(number[6]);
       //p4b.classList.add(number[7]);
-      
+
+      function getHanninIndex(yougiBlocks) {
+        const values = yougiBlocks.map(el => {
+          if (el.classList.contains("batu")) return null;
+          for (const c in classToNumber) {
+            if (el.classList.contains(c)) {
+              return classToNumber[c];
+            }
+          }
+          return null;
+        });
+        const valid = values.filter(v => v !== null);
+        if (valid.length === 0) return null;
+        const hasFive = valid.includes(5);
+        const target = hasFive ? Math.min(...valid) : Math.max(...valid);
+        return values.indexOf(target);
+      }
+      function calcRoundScores(hanninIndex, playerChoices) {
+        const scores = [0, 0, 0, 0];
+        const missMap = {};
+        playerChoices.forEach((choice, i) => {
+          if (choice !== hanninIndex) {
+            if (!missMap[choice]) missMap[choice] = [];
+            missMap[choice].push(i);
+          }
+        });
+        for (const key in missMap) {
+          const group = missMap[key];
+          const lastPlayer = group[group.length - 1];
+          scores[lastPlayer] = -group.length;
+        }
+        return scores;
+      }
+      function finishRound() {
+        const yougiBlocks = [yougi1b, yougi2b, yougi3b];
+        const hanninIndex = getHanninIndex(yougiBlocks);
+        const playerChoices1 = [p1Choice, p2Choice, p3Choice, p4Choice];
+        const playerChoices2 = [p2Choice, p3Choice, p4Choice, p1Choice];
+        const playerChoices3 = [p3Choice, p4Choice, p1Choice, p2Choice];
+        const playerChoices4 = [p4Choice, p1Choice, p2Choice, p3Choice];
+        let playerChoices;
+        if (r === 2) {
+          playerChoices = playerChoices1;
+        } else if (r === 3) {
+          playerChoices = playerChoices2;
+        } else if (r === 4) {
+          playerChoices = playerChoices3;
+        } else if (r === 5) {
+          playerChoices = playerChoices4;
+        }
+        const roundScores = calcRoundScores(hanninIndex, playerChoices);
+        for (let i = 0; i < 4; i++) {
+          totalScores[i] += roundScores[i];
+        }
+      }
+
       startB.addEventListener("click", function() {
         start.classList.add("off");
         back.classList.add("off");
@@ -1460,6 +1526,7 @@
             player.classList.add("p4m");
           }
           n = 1;
+          finishRound();
           if (r === 5) {
             next.classList.add("end");
           }
