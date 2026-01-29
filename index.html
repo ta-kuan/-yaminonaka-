@@ -510,8 +510,8 @@
       }
       .tokutenhyou {
         position: absolute;
-        width: 120vh;
-        height: 80vh;
+        width: 108vh;
+        height: 70vh;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
@@ -521,16 +521,23 @@
       }
       .hyou {
         position: absolute;
-        width: 17vh;
-        height: 13vh;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
+        width: 15vh;
+        height: 11vh;
         border: solid 1.5vh;
         border-color: rgb(0,0,0);
         background-color: rgb(230,230,230);
       }
-        
+      .hyou::after {
+        content: "R1";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-family: kihon;
+        font-size: 4vh;
+        white-space: nowrap;
+      }
+       
       .p1turn::after {
         content: "P1 の番です";
       }
