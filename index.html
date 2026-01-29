@@ -489,6 +489,45 @@
         font-family: kihon;
         font-size: 5vh;
       }
+      .backt {
+        position: absolute;
+        background-color: rgb(115,85,120);
+        width: 100%;
+        height: 100%;
+      }
+      .backt::after {
+        content: "";
+        font-family: "kihon";
+        font-weight: bold;
+        font-family: kihon;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-140%);
+        font-size: 10vw;
+        color: rgb(255,255,255);
+        white-space: nowrap;
+      }
+      .tokutenhyou {
+        position: absolute;
+        width: 120vh;
+        height: 80vh;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        border: solid 3vh;
+        border-radius: 1.5vh;
+      }
+      .hyou {
+        position: absolute;
+        width: 17vh;
+        height: 13vh;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        border: solid 1.5vh;
+      }
+        
       .p1turn::after {
         content: "P1 の番です";
       }
@@ -769,6 +808,7 @@
         <div class="hyou" id="30"></div>
       </div>
       <button class="next"></button>
+      <div class="backt"></div>
     </div>
     <script>
       const start = document.querySelector(".start");
@@ -836,6 +876,8 @@
       let syu = 0;
       let r = 1;
       const next = document.querySelector(".next");
+      const backt = document.querySelector(".backt");
+      const tokutenhyou = document.querySelector(".tokutenhyou");
       
       lefttop.classList.add("off");
       sininall.classList.add("off");
@@ -870,6 +912,8 @@
       ketteiK.classList.add("off");
       change.classList.add("off");
       next.classList.add("off");
+      backt.classList.add("off");
+      tokutenhyou.classList.add("off");
       for (let i = number.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [number[i], number[j]] = [number[j], number[i]];
@@ -1199,6 +1243,8 @@
         p41y.classList.add("off");
         p42y.classList.add("off");
         p43y.classList.add("off");
+        backt.classList.remove("off");
+        tokutenhyou.classList.remove("off");
         for (let i = number.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [number[i], number[j]] = [number[j], number[i]];
