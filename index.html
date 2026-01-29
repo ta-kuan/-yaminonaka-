@@ -969,6 +969,7 @@
         <span class="yougi3C">C</span>
         <img class="sentaku" src="sentaku.png" draggable="false"></img>
       </div>
+      <button class="tenkaku"></button>
       <div class="ketteiK"></div>
       <div class="kettei">
         <button class="kyanseru"></button>
@@ -1013,7 +1014,6 @@
         <div class="hyou" id="t30"></div>
       </div>
       <button class="next"></button>
-      <button class="tenkaku"></button>
     </div>
     <script>
       const start = document.querySelector(".start");
@@ -1202,6 +1202,7 @@
       //p2b.classList.add(number[5]);
       //p3b.classList.add(number[6]);
       //p4b.classList.add(number[7]);
+      tenkaku.classList.add("off");
       t12.classList.add("t0");
       t18.classList.add("t0");
       t24.classList.add("t0");
@@ -1848,6 +1849,7 @@
         bottom.classList.remove("off");
         player.classList.remove("off");
         player.classList.add("p1m");
+        tenkaku.classList.remove("off");
       });
       yougi1.addEventListener("click", function() {
         yougi1.classList.add("off");
@@ -1953,6 +1955,7 @@
       kakutei.addEventListener("click", function() {
         kettei.classList.add("off");
         ketteiK.classList.add("off");
+        tenkaku.classList.add("off");
         yougi1b.classList.add("off");
         yougi2b.classList.add("off");
         yougi3b.classList.add("off");
@@ -2113,6 +2116,7 @@
         yougi1.classList.remove("off");
         yougi2.classList.remove("off");
         yougi3.classList.remove("off");
+        tenkaku.classList.remove("off");
         if (syu === 4) {
           next.classList.remove("off");
           yougi1b.classList.add("dontclick");
