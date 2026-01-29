@@ -1500,6 +1500,22 @@
           p43y.classList.add("off");
           backt.classList.remove("off");
           tokutenhyou.classList.remove("off");
+          n = 1;
+          keisan();
+          if (r === 5) {
+            next.classList.add("end");
+          }
+        } else if (n === 1) {
+          if (r === 5) {
+            location.reload();
+            return;
+          }
+          next.classList.add("off");
+          tokutenhyou.classList.add("off");
+          backt.classList.add("off");
+          change.classList.remove("off");
+          backc.classList.remove(...backcclasses);
+          changeb.classList.remove("answerb");
           for (let i = number.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [number[i], number[j]] = [number[j], number[i]];
@@ -1529,22 +1545,6 @@
             p1b.classList.add(number[4]);
             player.classList.add("p4m");
           }
-          n = 1;
-          keisan();
-          if (r === 5) {
-            next.classList.add("end");
-          }
-        } else if (n === 1) {
-          if (r === 5) {
-            location.reload();
-            return;
-          }
-          next.classList.add("off");
-          tokutenhyou.classList.add("off");
-          backt.classList.add("off");
-          change.classList.remove("off");
-          backc.classList.remove(...backcclasses);
-          changeb.classList.remove("answerb");
           if (r === 2) {
             backc.classList.add("p2turn");
           } else if (r === 3) {
