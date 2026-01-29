@@ -1129,7 +1129,7 @@
       //p4b.classList.add(number[7]);
 
       function getHanninIndex(yougiBlocks) {
-        const values = yougiBlocks.map(el => {
+        let values = yougiBlocks.map(el => {
           if (el.classList.contains("batu")) return null;
           for (const c in classToNumber) {
             if (el.classList.contains(c)) {
@@ -1138,15 +1138,15 @@
           }
           return null;
         });
-        const valid = values.filter(v => v !== null);
+        let valid = values.filter(v => v !== null);
         if (valid.length === 0) return null;
-        const hasFive = valid.includes(5);
-        const target = hasFive ? Math.min(...valid) : Math.max(...valid);
+        let hasFive = valid.includes(5);
+        let target = hasFive ? Math.min(...valid) : Math.max(...valid);
         return values.indexOf(target);
       }
       function calcRoundScores(hanninIndex, playerChoices) {
-        const scores = [0, 0, 0, 0];
-        const missMap = {};
+        let scores = [0, 0, 0, 0];
+        let missMap = {};
         playerChoices.forEach((choice, i) => {
           if (choice !== hanninIndex) {
             if (!missMap[choice]) missMap[choice] = [];
@@ -1154,19 +1154,19 @@
           }
         });
         for (const key in missMap) {
-          const group = missMap[key];
-          const lastPlayer = group[group.length - 1];
+          let group = missMap[key];
+          let lastPlayer = group[group.length - 1];
           scores[lastPlayer] = -group.length;
         }
         return scores;
       }
       function finishRound() {
-        const yougiBlocks = [yougi1b, yougi2b, yougi3b];
-        const hanninIndex = getHanninIndex(yougiBlocks);
-        const playerChoices1 = [p1Choice, p2Choice, p3Choice, p4Choice];
-        const playerChoices2 = [p2Choice, p3Choice, p4Choice, p1Choice];
-        const playerChoices3 = [p3Choice, p4Choice, p1Choice, p2Choice];
-        const playerChoices4 = [p4Choice, p1Choice, p2Choice, p3Choice];
+        let yougiBlocks = [yougi1b, yougi2b, yougi3b];
+        let hanninIndex = getHanninIndex(yougiBlocks);
+        let playerChoices1 = [p1Choice, p2Choice, p3Choice, p4Choice];
+        let playerChoices2 = [p2Choice, p3Choice, p4Choice, p1Choice];
+        let playerChoices3 = [p3Choice, p4Choice, p1Choice, p2Choice];
+        let playerChoices4 = [p4Choice, p1Choice, p2Choice, p3Choice];
         let playerChoices;
         if (r === 2) {
           playerChoices = playerChoices1;
@@ -1177,7 +1177,7 @@
         } else if (r === 5) {
           playerChoices = playerChoices4;
         }
-        const roundScores = calcRoundScores(hanninIndex, playerChoices);
+        let roundScores = calcRoundScores(hanninIndex, playerChoices);
         for (let i = 0; i < 4; i++) {
           totalScores[i] += roundScores[i];
         }
