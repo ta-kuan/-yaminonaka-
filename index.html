@@ -1059,13 +1059,7 @@
       const backt = document.querySelector(".backt");
       const tokutenhyou = document.querySelector(".tokutenhyou");
       let n = 0;
-      let p1Choice = null;
-      let p2Choice = null;
-      let p3Choice = null;
-      let p4Choice = null;
-      let hanninIndex = null;
       const tclasses = ["t0","t-1","t-2","t-3","t-4","t-5","t-6","t-7","t-8"];
-      let totalScores = [0, 0, 0, 0];
       const classToNumber = {
         ni: 2,
         san: 3,
@@ -1075,7 +1069,7 @@
         nana: 7,
         hati: 8
       };
-
+      let hannin = null;
       
       lefttop.classList.add("off");
       sininall.classList.add("off");
@@ -1129,61 +1123,13 @@
       //p3b.classList.add(number[6]);
       //p4b.classList.add(number[7]);
 
-      function getHanninIndex(yougiBlocks) {
-        let values = yougiBlocks.map(el => {
-          if (el.classList.contains("batu")) return null;
-          for (const c in classToNumber) {
-            if (el.classList.contains(c)) {
-              return classToNumber[c];
-            }
+      function keisan() {
+        for (const c in classToNumber) {
+          if (el.classList.contains(c)) {
+            return classToNumber[c];
           }
-          return null;
-        });
-        let valid = values.filter(v => v !== null);
-        if (valid.length === 0) return null;
-        let hasFive = valid.includes(5);
-        let target = hasFive ? Math.min(...valid) : Math.max(...valid);
-        return values.indexOf(target);
-      }
-      function calcRoundScores(hanninIndex, playerChoices) {
-        let scores = [0, 0, 0, 0];
-        let missMap = {};
-        playerChoices.forEach((choice, i) => {
-          if (choice !== hanninIndex) {
-            if (!missMap[choice]) missMap[choice] = [];
-            missMap[choice].push(i);
-          }
-        });
-        for (const key in missMap) {
-          let group = missMap[key];
-          let lastPlayer = group[group.length - 1];
-          scores[lastPlayer] = -group.length;
-        }
-        return scores;
-      }
-      function finishRound() {
-        let yougiBlocks = [yougi1b, yougi2b, yougi3b];
-        hanninIndex = getHanninIndex(yougiBlocks);
-        let playerChoices1 = [p1Choice, p2Choice, p3Choice, p4Choice];
-        let playerChoices2 = [p2Choice, p3Choice, p4Choice, p1Choice];
-        let playerChoices3 = [p3Choice, p4Choice, p1Choice, p2Choice];
-        let playerChoices4 = [p4Choice, p1Choice, p2Choice, p3Choice];
-        let playerChoices;
-        if (r === 2) {
-          playerChoices = playerChoices1;
-        } else if (r === 3) {
-          playerChoices = playerChoices2;
-        } else if (r === 4) {
-          playerChoices = playerChoices3;
-        } else if (r === 5) {
-          playerChoices = playerChoices4;
-        }
-        let roundScores = calcRoundScores(hanninIndex, playerChoices);
-        for (let i = 0; i < 4; i++) {
-          totalScores[i] += roundScores[i];
         }
       }
-
       startB.addEventListener("click", function() {
         start.classList.add("off");
         back.classList.add("off");
@@ -1531,7 +1477,7 @@
             player.classList.add("p4m");
           }
           n = 1;
-          finishRound();
+          keisan();
           if (r === 5) {
             next.classList.add("end");
           }
