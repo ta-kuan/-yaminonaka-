@@ -695,6 +695,30 @@
         top: 56vh;
         border-radius: 0 0 2vh 0;
       }
+      .tenkaku {
+        position: absolute;
+        width: 20vh;
+        height: 10vh;
+        right: 3vh;
+        bottom: 3vh;
+        background-color: rgb(255,200,100);
+        border: none;
+        border-radius: 3vh;
+      }
+      .tenkaku::after {
+        content: "点数";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        color: rgb(0,0,0);
+        white-space: nowrap;
+        font-family: kihon;
+        font-size: 5vh;
+      }
+      .tenkaku.modoru::after {
+        content: "戻る";
+      }
       
       .p1turn::after {
         content: "P1 の番です";
@@ -989,6 +1013,7 @@
         <div class="hyou" id="t30"></div>
       </div>
       <button class="next"></button>
+      <button class="tenkaku"></button>
     </div>
     <script>
       const start = document.querySelector(".start");
@@ -1177,6 +1202,10 @@
       //p2b.classList.add(number[5]);
       //p3b.classList.add(number[6]);
       //p4b.classList.add(number[7]);
+      t12.classList.add("t0");
+      t18.classList.add("t0");
+      t24.classList.add("t0");
+      t30.classList.add("t0");
 
       function hanninf(el) {
         if (el.classList.contains("batu")) return null;
@@ -2183,6 +2212,15 @@
             backc.classList.add("p4turn");
           }
           n = 0;
+        }
+      });
+      tenkaku.addEventListener("click", function() {
+        if (tenkaku.classList.contains("modoru")) {
+          backt.classList.add("off");
+          tokutenhyou.classList.add("off");
+        } else {
+          backt.classList.remove("off");
+          tokutenhyou.classList.remove("off");
         }
       });
     </script>
