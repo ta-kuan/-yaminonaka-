@@ -1442,10 +1442,16 @@
         } else if (n === 1) {
           next.classList.add("off");
           tokutenhyou.classList.add("off");
-          yougi1b.classList.remove("off");
-          yougi2b.classList.remove("off");
-          yougi3b.classList.remove("off");
           backt.classList.add("off");
+          change.classList.remove("off");
+          backc.classList.remove(...backcclasses);
+          if (r === 2) {
+            backc.classList.add("p2turn");
+          } else if (r === 3) {
+            backc.classList.add("p3turn");
+          } else if (r === 4) {
+            backc.classList.add("p4turn");
+          }
           n = 0;
         }
       });
