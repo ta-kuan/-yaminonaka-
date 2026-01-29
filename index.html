@@ -489,6 +489,13 @@
         font-family: kihon;
         font-size: 5vh;
       }
+      .next.end {
+        width: 30vh;
+        background-color: rgb(255,255,180);
+      }
+      .next.end.::after {
+        content: "タイトルへ戻る";
+      }
       .backt {
         position: absolute;
         background-color: rgb(115,85,120);
@@ -1453,8 +1460,14 @@
             player.classList.add("p4m");
           }
           n = 1;
-          if (r === 5) next.classList.add("off");
+          if (r === 5) {
+            next.classList.add("end");
+          }
         } else if (n === 1) {
+          if (r === 5) {
+            location.reload();
+            return;
+          }
           next.classList.add("off");
           tokutenhyou.classList.add("off");
           backt.classList.add("off");
