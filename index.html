@@ -2206,20 +2206,16 @@
             p2b.classList.add(number[5]);
             p3b.classList.add(number[6]);
             player.classList.add("p2m");
+            backc.classList.add("p2turn");
           } else if (r === 3) {
             p3b.classList.add(number[6]);
             p4b.classList.add(number[7]);
             player.classList.add("p3m");
+            backc.classList.add("p3turn");
           } else if (r === 4) {
             p4b.classList.add(number[7]);
             p1b.classList.add(number[4]);
             player.classList.add("p4m");
-          }
-          if (r === 2) {
-            backc.classList.add("p2turn");
-          } else if (r === 3) {
-            backc.classList.add("p3turn");
-          } else if (r === 4) {
             backc.classList.add("p4turn");
           }
           n = 0;
